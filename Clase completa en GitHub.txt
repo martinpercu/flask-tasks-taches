@@ -1,0 +1,5 @@
+TODA LA CLASE
+
+en GIT
+
+https://github.com/jeyfredc/Curso-de-flask#Clase-19-Desplegar-Flashes-mensajes-emergentes

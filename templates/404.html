@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macros %}
+
+{% block tittle %}
+    {{ super() }}
+    404 
+{% endblock %}
+
+{% block content %}
+    <H1>Lo sentimos no encontramos lo que buscas</H1>
+    <p>{{ error }}</p> 
+{% endblock %}

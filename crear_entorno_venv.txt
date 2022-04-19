@@ -1,0 +1,81 @@
+Video de PLATZI
+https://platzi.com/clases/2255-python-intermedio/36459-el-primer-paso-profesional-creacion-de-un-entorno-/
+
+El entorno se crea solo una vez.
+python3 -m vend vend
+
+Activar y desactivar entorno virtual : 
+
+activar:
+source venv/bin/activate
+
+desactivar:
+deactivate
+
+--------------------------------
+
+Esto installa lo que vayamos metiendo en requirements.txt
+
+pip install -r requirements.txt
+
+------------------------------------
+
+Arrancar servidor
+
+flask run
+
+Si el servidor dice que no hay variable app o algo así :
+export FLASK_AAP=main.py
+
+https://github.com/jeyfredc/Curso-de-flask#Clase-19-Desplegar-Flashes-mensajes-emergentes
+
+-------------------------------------
+
+Para activar el debug mode escribir lo siguiente en la consola:
+
+export FLASK_DEBUG=1
+echo $FLASK_DEBUG
+
+----------------------------------
+
+Para activar/pasar modo development "se declara una variable FLASK_ENV
+
+export FLASK_ENV=development
+	
+Chequeamos si existe --> 
+echo FLASK_ENV
+si todo OK devuelve:
+FLASK_ENV=development
+
+----------------------------------
+
+RuntimeError: Your version of Flask doesn't support signals. This requires Flask 0.6+ with the blinker module installed
+
+$ pip install blinker
+
+----------------------------------
+
+Firestore : 
+(venv) macbook@MacBook-Pro-de-martin todo-flask % gcloud auth login
+abre navegador
+You are now logged in as [martinpercu@gmail.com].
+Your current project is [tasks-taches].  You can change this setting by running:
+  $ gcloud config set project PROJECT_ID
+
+Para manejar desde local la DB
+(venv) macbook@MacBook-Pro-de-martin todo-flask % gcloud auth application-default login
+
+
+----------------------------------
+
+Después de media hora sin poder poner la imagen y con el error de image not found, encontré que es bastante útil darle los path a Flask desde el principio
+
+app = Flask(__name__, 
+template_folder='../templates', 
+static_folder='../static')
+
+----------------------------------
+
+Todo el proyecto TODO piola 
+https://github.com/innacroft/Apptask
+

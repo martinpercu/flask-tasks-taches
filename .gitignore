@@ -1,7 +1,7 @@
 
 # ignore ALL files in ANY directory named temp
-venv/
+**/venv
 
-__pycache__/
+**/__pycache__
 
-secret-martin.txt
+/secret-martin.txt

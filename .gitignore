@@ -1,11 +1,7 @@
-# ignore ALL .log files
-*.log
 
 # ignore ALL files in ANY directory named temp
-temp/
+**/venv
 
+**/__pycache__
 
-# ignore ALL files in ANY directory named temp
-venv/
-
-__pycache__
+/secret-martin.txt

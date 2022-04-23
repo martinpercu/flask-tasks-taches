@@ -36,7 +36,7 @@ def server_error(error):
     return render_template('500.html', error=error)
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     user_ip = request.remote_addr
 

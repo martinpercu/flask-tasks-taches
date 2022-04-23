@@ -1,4 +1,3 @@
-from cgitb import reset
 from flask_testing import TestCase
 from flask import current_app, url_for
 
@@ -22,6 +21,8 @@ class MainTest(TestCase):
     #     response = self.client.get(url_for('index'))
         
     #     self.assertRedirects(response, url_for('hello'))
+
+
 
     def test_hello_get(self):
         response = self.client.get(url_for('hello'))

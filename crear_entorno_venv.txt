@@ -27,6 +27,8 @@ flask run
 Si el servidor dice que no hay variable app o algo así :
 export FLASK_APP=main.py
 
+(ojo en teoria se estaría trayendo el FLASK_TEST que está adentro de main.py)
+
 https://github.com/jeyfredc/Curso-de-flask#Clase-19-Desplegar-Flashes-mensajes-emergentes
 
 -------------------------------------

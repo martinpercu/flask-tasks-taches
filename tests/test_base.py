@@ -40,6 +40,6 @@ class MainTest(TestCase):
         # self.assertRedirects(response, url_for('index'))
 
         # self.assertRedirects(response, url_for('index'))
+        # tes
 
     
-        

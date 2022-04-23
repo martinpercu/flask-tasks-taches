@@ -25,7 +25,7 @@ Arrancar servidor
 flask run
 
 Si el servidor dice que no hay variable app o algo así :
-export FLASK_AAP=main.py
+export FLASK_APP=main.py
 
 https://github.com/jeyfredc/Curso-de-flask#Clase-19-Desplegar-Flashes-mensajes-emergentes
 

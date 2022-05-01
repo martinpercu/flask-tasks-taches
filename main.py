@@ -5,10 +5,9 @@ from wtforms.fields import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired
 import unittest 
 
-app = Flask(__name__)
-bootstrap = Bootstrap(app)
+from app import create_app
 
-app.config['SECRET_KEY'] = 'SUPER SECRETO'
+app = create_app()
 
 
 todos = ['Comprar Café', 'Enviar solicitud Compra', 'Entregar producto']

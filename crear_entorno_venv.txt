@@ -58,7 +58,8 @@ $ pip install blinker
 ----------------------------------
 
 Firestore : 
-(venv) macbook@MacBook-Pro-de-martin todo-flask % gcloud auth login
+
+(venv) macbook@MacBook-Pro-de-martin todo-flask %  gcloud auth login
 abre navegador
 You are now logged in as [martinpercu@gmail.com].
 Your current project is [tasks-taches].  You can change this setting by running:
@@ -66,6 +67,17 @@ Your current project is [tasks-taches].  You can change this setting by running:
 
 Para manejar desde local la DB
 (venv) macbook@MacBook-Pro-de-martin todo-flask % gcloud auth application-default login
+
+OJO ! 
+Para manejar los proyectos usar estos comandos:
+
+gcloud config list ----> (esto nos muestra donde estamos)
+
+cloud confit set project "el nombre del proyecto" 
+osea
+cloud confit set project tasks-taches
+
+
 
 
 ----------------------------------

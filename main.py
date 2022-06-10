@@ -1,9 +1,13 @@
+import unittest 
 from flask import Flask, flash, redirect, request, make_response, redirect, render_template, session, url_for
+from flask_login import login_required
+from app import login_manager #### Aquí
+
+
 # from flask_bootstrap import Bootstrap
 # from flask_wtf import FlaskForm
 # from wtforms.fields import StringField, PasswordField, SubmitField
 # from wtforms.validators import DataRequired
-import unittest 
 
 from app import create_app
 from app.forms import LoginForm
@@ -11,6 +15,8 @@ from app.forms import LoginForm
 from app.firestore_service import get_users, get_todos
 
 app = create_app()
+login_manager.init_app(app) #### Aquí
+
 
 
 todos = ['Comprar Café', 'Enviar solicitud Compra', 'Entregar producto']
@@ -49,6 +55,7 @@ def index():
 
 
 @app.route('/hello', methods=['GET'])
+@login_required
 def hello():
     user_ip = session.get('user_ip')
     username = session.get('username')
@@ -59,14 +66,14 @@ def hello():
         'username' : username
     }
 
-    users = get_users()
+    # users = get_users()
 
-    print('laconcha')
+    # print('laconcha')
 
-    for user in users:
-        print(user)
-        print(user.id)
-        print(user.to_dict()['password'])
+    # for user in users:
+    #     print(user)
+    #     print(user.id)
+    #     print(user.to_dict()['password'])
 
 
     return render_template('hello.html', **context)

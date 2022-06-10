@@ -5,13 +5,14 @@
 
 {% block tittle %}
     {{ super() }}
-    Login
+    Signup
 {% endblock %}
 
 
 {% block content %}
+    <h2>Registra una cuenta</h2>
     <div class="container">
-        {{ wtf.quick_form(login_form) }}
+        {{ wtf.quick_form(signup_form) }}
 
     </div>
 

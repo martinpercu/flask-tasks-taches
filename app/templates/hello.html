@@ -16,6 +16,12 @@
     {% else %}
         <a href="{{ url_for('index') }}">Ir al index</a>
     {% endif %}
+
+    <div class="container">
+        <h2>Anota tus tareas aquí</h2>
+
+        {{ wtf.quick_form(todo_form) }}
+    </div>
     
 
     <ul>

@@ -93,3 +93,39 @@ static_folder='../static')
 Todo el proyecto TODO piola 
 https://github.com/innacroft/Apptask
 
+-----------
+
+Para cambiar de PROJECT en el GCLOUD usar esto:
+gcloud config set project tasks-taches-prod
+gcloud config set project "ID del project"
+
+para hacer deploy:
+gcloud app deploy app.yaml
+
+Este es el url de la app:
+https://tasks-taches-prod.nw.r.appspot.com
+
+-----------
+
+Ojo que si hay error 502. Hay que actualizar las dependencias en el archivo de requirements.txt.
+Desde la consola lo pueden hacer así:
+pip3 freeze > requirements.txt
+
+
+-----------
+A continuation comando copiados desde arriba para ir rápido desde consola
+source venv/bin/activate
+export FLASK_APP=main.py
+export FLASK_DEBUG=1
+
+para development
+gcloud config set project tasks-taches
+export FLASK_ENV=development
+
+para production
+gcloud config set project tasks-taches-prod
+export FLASK_ENV=production
+
+
+
+

@@ -2,7 +2,7 @@ Video de PLATZI
 https://platzi.com/clases/2255-python-intermedio/36459-el-primer-paso-profesional-creacion-de-un-entorno-/
 
 El entorno se crea solo una vez.
-python3 -m vend vend
+python3 -m venv venv
 
 Activar y desactivar entorno virtual : 
 

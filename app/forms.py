@@ -5,19 +5,19 @@ from wtforms.validators import DataRequired
 
 
 class LoginForm(FlaskForm):
-    username = StringField('Nombre de Usuario', validators=[DataRequired()])
+    username = StringField('User Name', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField('Enviar')
+    submit = SubmitField('Login')
 
 
 class TodoForm(FlaskForm):
-    description = StringField('Descripción', validators=[DataRequired()])
-    submit = SubmitField('Crear')
+    description = StringField('Task - Description - de la tache ', validators=[DataRequired()])
+    submit = SubmitField('Add / Adjouter')
 
 
 class DeleteTodoForm(FlaskForm):
-    submit = SubmitField('Delete Task')
+    submit = SubmitField('Delete Task / Efacer Tache')
 
 
 class UpdateTodoForm(FlaskForm):
-    submit = SubmitField('Actualize Task')
+    submit = SubmitField('Actualize Task / Actualiser Tache')

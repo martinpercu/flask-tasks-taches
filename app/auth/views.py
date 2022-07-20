@@ -1,7 +1,7 @@
 from multiprocessing import context
 from flask import render_template, session, redirect, flash, url_for
 from flask_login import login_user, login_required, logout_user
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 from app.forms import LoginForm
 from app.models import UserData, UserModel
@@ -26,16 +26,14 @@ def login():
         user_doc = get_user(username)
 
         if user_doc.to_dict() is not None:
-            password_from_db = user_doc.to_dict()['password']
+            #password_from_db = user_doc.to_dict()['password']
 
-            if password == password_from_db:
+            if check_password_hash(user_doc.to_dict()['password'], password):
                 user_data = UserData(username, password)
                 user = UserModel(user_data)
-
-                login_user(user)
-
-                flash('Bienvenido nuevamente!')
-
+                print(f'-user: {user}')
+                status=login_user(user)
+               
                 redirect(url_for('hello'))
             else:
                 flash('La info no coincide en DB')

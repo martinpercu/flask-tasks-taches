@@ -10,14 +10,20 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 
+class SignupForm(FlaskForm):
+    username = StringField('User Name', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    submit = SubmitField('Signup')
+
+
 class TodoForm(FlaskForm):
-    description = StringField('Task - Description - de la tache ', validators=[DataRequired()])
-    submit = SubmitField('Add / Adjouter')
+    description = StringField('Task description', validators=[DataRequired()])
+    submit = SubmitField('Add / Ajouter')
 
 
 class DeleteTodoForm(FlaskForm):
-    submit = SubmitField('Delete Task / Efacer Tache')
+    submit = SubmitField('Delete Task / Efacer Tâche')
 
 
 class UpdateTodoForm(FlaskForm):
-    submit = SubmitField('Actualize Task / Actualiser Tache')
+    submit = SubmitField('Changer task status / Modifier l\'état de la tâche')

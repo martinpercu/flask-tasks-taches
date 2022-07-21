@@ -5,3 +5,11 @@ html * {
 img {
     max-width: 30px;
 }
+
+.badge_false {
+    background: red;
+}
+
+.badge_true {
+    background: green;
+}

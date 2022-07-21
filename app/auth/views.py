@@ -3,7 +3,7 @@ from flask import render_template, session, redirect, flash, url_for
 from flask_login import login_user, login_required, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from app.forms import LoginForm
+from app.forms import LoginForm, SignupForm
 from app.models import UserData, UserModel
 
 from . import auth
@@ -36,10 +36,10 @@ def login():
                
                 redirect(url_for('hello'))
             else:
-                flash('La info no coincide en DB')
+                flash('The info not match with Database')
 
         else:
-            flash('El usuario no ha sido encontrado')
+            flash('The user name is not finded')
 
             
 
@@ -53,7 +53,7 @@ def login():
     
 @auth.route('signup', methods=['GET', 'POST'])
 def signup():
-    signup_form = LoginForm()
+    signup_form = SignupForm()
     context = {
         'signup_form': signup_form
     }
@@ -73,25 +73,25 @@ def signup():
 
             login_user(user)
 
-            flash('Bienvenido !!! Ya estar registrado y Logueado')
+            flash('Welcome!! You are registered and logged. ---- Bienvenue!! Vous est enregistré et logged')
 
             return redirect(url_for('hello'))
 
         else:
-            flash('El usuario ya existe!!!')
-
-
-
+            flash('This user name is already Register!! ------ Cet nom d\'utilisateur existe déjà ! !')
+            flash('Register another name ------- Utilisez un autre nom pour s\'enregistrer !!')
+            # return redirect(url_for('auth.login'))
 
 
     return render_template('signup.html', **context)
     
 
+
 @auth.route('logout')
 @login_required
 def logout():
     logout_user()
-    flash('Ya te desconectaste, regresa pronto')
+    flash('You are logged out   ---   Vous êtes déconnecté')
 
     return redirect(url_for('auth.login'))
     

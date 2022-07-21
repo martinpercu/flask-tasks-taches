@@ -76,18 +76,9 @@ def hello():
     if todo_form.validate_on_submit():
         put_todo(user_id= username, description= todo_form.description.data)
 
-        flash('Tarea agregada con éxito')
+        flash('Task added OK | Tâche ajoutée OK')
 
         return redirect(url_for('hello'))
-
-    # users = get_users()
-
-    # print('laconcha')
-
-    # for user in users:
-    #     print(user)
-    #     print(user.id)
-    #     print(user.to_dict()['password'])
 
 
     return render_template('hello.html', **context)
